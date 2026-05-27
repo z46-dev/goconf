@@ -5,6 +5,7 @@ import (
 	"path"
 	"runtime"
 	"strings"
+	"time"
 
 	"github.com/z46-dev/goconf"
 )
@@ -33,8 +34,9 @@ func resolveToWhereThisProgramIs() (filename string) {
 func main() {
 	var (
 		configFilePath string        = path.Join(resolveToWhereThisProgramIs(), "config.toml")
+		start          time.Time     = time.Now()
 		config         Configuration = goconf.MustLoadConfig[Configuration](configFilePath)
 	)
 
-	fmt.Printf("filePath=%s\nConfiguration%+v\n", configFilePath, config)
+	fmt.Printf("filePath=%s\ntime=%s\nConfiguration%+v\n", configFilePath, time.Since(start), config)
 }
