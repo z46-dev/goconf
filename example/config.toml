@@ -1,0 +1,8 @@
+host_ipv4 = "127.0.0.1"
+host_ipv6 = "fe80::1"
+host_port = 8080
+
+[SSL]
+    enabled = true
+    cert_path = "/etc/ssl/cert.pem"
+    key_path = "/etc/ssl/key.pem"
